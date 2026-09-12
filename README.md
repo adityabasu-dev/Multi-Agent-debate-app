@@ -26,3 +26,13 @@ pip install langchain langchain-groq langgraph python-dotenv pydantic
 ```
 
 Create a `.env` file with a free Groq API key ([console.groq.com](https://console.groq.com)):
+GROQ_API_KEY=your_key_here
+
+
+## Run
+
+```bash
+python main.py
+```
+
+You'll be prompted for a debate topic, then the Pro and Con agents will argue for a fixed number of rounds before the judge delivers a verdict.
