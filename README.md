@@ -2,6 +2,8 @@
 
 Two AI agents debate opposite sides of a topic, then a third agent judges the winner — built to learn LangChain and LangGraph by implementing agentic orchestration from scratch.
 
+🔗 **[Live Demo](https://multi-agent-debate-app-ubs5xw93gcpzyrdqjhobps.streamlit.app/)** — try it in the browser, no setup needed
+
 ## How it works
 
 - **Pro** and **Con** debater chains argue opposite stances on a given topic, alternating turns.
@@ -18,21 +20,29 @@ Two AI agents debate opposite sides of a topic, then a third agent judges the wi
 ## Setup
 
 ```bash
-git clone <your-repo-url>
-cd multi-agent-debater
+git clone https://github.com/adityabasu-dev/Multi-Agent-debate-app.git
+cd Multi-Agent-debate-app
 python -m venv venv
 source venv/bin/activate  # venv\Scripts\activate on Windows
-pip install langchain langchain-groq langgraph python-dotenv pydantic
+pip install -r requirements.txt
 ```
 
-Create a `.env` file with a free Groq API key ([console.groq.com](https://console.groq.com)):
-GROQ_API_KEY=your_key_here
+Copy `.env.example` to `.env` and add your free Groq API key ([console.groq.com](https://console.groq.com)):
+```bash
+cp .env.example .env
+```
 
 
 ## Run
 
+**CLI version:**
 ```bash
 python main.py
+```
+
+**Web UI (Streamlit):**
+```bash
+streamlit run streamlit_app.py
 ```
 
 You'll be prompted for a debate topic, then the Pro and Con agents will argue for a fixed number of rounds before the judge delivers a verdict.
